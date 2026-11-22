@@ -1,4 +1,3 @@
-
 /* =====================================================
    ASOAGROTURÍ · SISTEMA VISUAL
    Diseño responsive de la landing
@@ -7,8 +6,8 @@
 /* 1. VARIABLES GLOBALES */
 
 :host {
-  --green-dark:  #1B723E;
-  --green:#11402A;
+  --green-dark: #1B723E;
+  --green: #11402A;
   --green-light: #e7eee4;
   --cream: #f7f5ed;
   --cream-dark: #eeebdf;
@@ -19,7 +18,7 @@
 
   display: block;
   color: var(--text);
-  font-family:"Branding", Arial, sans-serif;
+  font-family: "Branding", Arial, sans-serif;
 }
 
 * {
@@ -147,7 +146,7 @@ p {
 }
 
 .button-outline {
-  border-color: rgba(255,255,255,.5);
+  border-color: rgba(255, 255, 255, .5);
   color: white;
 }
 
@@ -171,112 +170,360 @@ p {
 }
 
 
-/* 3. HEADER / NAVEGACIÓN */
+
+
+/* =====================================================
+  3.HEADER / NAVEGACIÓN MODERNA
+====================================================== */
+
+/* HEADER TRANSPARENTE */
 
 .site-header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(247, 245, 237, .96);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(25, 61, 48, .08);
+  width: 100%;
+  padding: 10px 0;
+  background: var(--cream-dark);
+  border: none;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
 
+/* CONTENEDOR */
+
 .nav-container {
-  min-height: 82px;
+  min-height: 90px;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 30px;
+
+  gap: 24px;
 }
 
+/* LOGO */
+
 .brand {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 10px;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.brand-logo {
+  display: block;
+
+  width: 155px;
+  height: 100px;
+
+  object-fit: contain;
   flex-shrink: 0;
 }
 
-.brand-symbol {
-  width: 42px;
-  height: 42px;
-  display: grid;
-  place-items: center;
-  background: var(--green-dark);
-  color: var(--cream);
-  font-family: Georgia, serif;
-  font-size: 27px;
-  border-radius: 50%;
-}
-
-.brand-name {
-  color: var(--green-dark);
-  font-size: 16px;
-  font-weight: 800;
-  letter-spacing: 1px;
-}
-
-.brand-name small {
-  display: block;
-  margin-top: 4px;
-  font-size: 8px;
-  letter-spacing: 2px;
-}
+/* NAVEGACIÓN FLOTANTE */
 
 .desktop-nav {
   display: flex;
   align-items: center;
-  gap: 25px;
+  justify-content: center;
+
+  gap: 4px;
+  padding: 7px;
+
+  background: rgba(255, 255, 255, 0.78);
+
+  border: 1px solid rgba(25, 61, 48, 0.07);
+  border-radius: 100px;
+
+  box-shadow: 0 6px 24px rgba(25, 61, 48, 0.06);
 }
 
 .desktop-nav a {
+  padding: 12px 15px;
+
   color: var(--text);
   font-size: 12px;
   font-weight: 600;
-  transition: color .2s;
+
+  text-decoration: none;
+  white-space: nowrap;
+
+  border-radius: 100px;
+
+  transition: all .25s ease;
 }
 
 .desktop-nav a:hover {
-  color: var(--orange);
+  color: var(--green-dark);
+  background: rgba(27, 114, 62, 0.09);
 }
 
+/* BOTÓN SER ALIADO */
+
 .nav-cta {
-  min-height: 44px;
-  padding-inline: 18px;
+  min-height: 46px;
+  padding: 0 23px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  border-radius: 100px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  text-decoration: none;
 }
+
+.nav-cta span {
+  transition: transform .25s ease;
+}
+
+.nav-cta:hover span {
+  transform: translate(3px, -3px);
+}
+
+
+/* =====================================================
+   MENÚ MÓVIL
+====================================================== */
 
 .mobile-menu {
   display: none;
   position: relative;
 }
 
-.mobile-menu summary {
-  list-style: none;
+/* BOTÓN HAMBURGUESA */
+
+.mobile-menu-toggle {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   cursor: pointer;
-  font-size: 25px;
-  color: var(--green-dark);
+  list-style: none;
+
+  background: var(--green);
+  border-radius: 50%;
+
+  transition: background .25s ease;
 }
 
-.mobile-menu summary::-webkit-details-marker {
+.mobile-menu-toggle::-webkit-details-marker {
   display: none;
 }
 
-.mobile-menu nav {
-  position: absolute;
-  right: 0;
-  top: 45px;
-  width: 230px;
-  padding: 16px;
-  background: var(--cream);
-  box-shadow: 0 15px 35px rgba(0,0,0,.14);
-  border-radius: 8px;
+.menu-icon {
+  width: 20px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
-.mobile-menu nav a {
+.menu-icon span {
+  width: 20px;
+  height: 2px;
+
   display: block;
-  padding: 13px 8px;
+
+  background: white;
+  border-radius: 5px;
+
+  transition: transform .25s ease;
+}
+
+/* TRANSFORMACIÓN DEL ICONO */
+
+.mobile-menu[open] .menu-icon span:first-child {
+  transform: translateY(4px) rotate(45deg);
+}
+
+.mobile-menu[open] .menu-icon span:last-child {
+  transform: translateY(-4px) rotate(-45deg);
+}
+
+/* PANEL DESPLEGABLE */
+
+.mobile-menu-panel {
+  position: absolute;
+  top: calc(100% + 15px);
+  right: 0;
+
+  width: min(340px, calc(100vw - 32px));
+  padding: 25px;
+
+  background: var(--cream);
+
+  border: 1px solid rgba(25, 61, 48, .08);
+  border-radius: 24px;
+
+  box-shadow: 0 20px 55px rgba(25, 61, 48, .15);
+
+  animation: menuAppear .25s ease both;
+}
+
+@keyframes menuAppear {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ENCABEZADO */
+
+.mobile-menu-header {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+
+  margin-bottom: 18px;
+
+  color: var(--green-dark);
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.mobile-menu-header small {
+  color: var(--orange);
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+/* ENLACES */
+
+.mobile-menu-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-menu-links a {
+  min-height: 55px;
+
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  color: var(--green-dark);
+  font-size: 15px;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  border-bottom: 1px solid rgba(25, 61, 48, .09);
+
+  transition: padding .2s ease, color .2s ease;
+}
+
+.menu-number {
+  color: var(--orange);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.menu-arrow {
+  margin-left: auto;
+  opacity: .5;
+}
+
+.mobile-menu-links a:hover {
+  color: var(--orange);
+  padding-left: 5px;
+}
+
+/* ACCIÓN PRINCIPAL */
+
+.mobile-menu-cta {
+  min-height: 50px;
+  margin-top: 22px;
+  padding: 0 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  color: white;
   font-size: 14px;
-  border-bottom: 1px solid var(--cream-dark);
+  font-weight: 700;
+
+  text-decoration: none;
+
+  background: var(--green-dark);
+  border-radius: 100px;
+
+  transition: background .2s ease;
+}
+
+.mobile-menu-cta:hover {
+  background: var(--green);
+}
+
+/* PIE DEL MENÚ */
+
+.mobile-menu-footer {
+  margin: 18px 0 0;
+
+  color: var(--text);
+  font-size: 11px;
+  text-align: center;
+  opacity: .65;
+}
+
+/* =====================================================
+   RESPONSIVE
+====================================================== */
+
+@media (max-width: 850px) {
+
+  .desktop-nav {
+    display: none;
+  }
+
+  .nav-container {
+    min-height: 75px;
+    gap: 12px;
+  }
+
+  .brand-logo {
+    width: 115px;
+    height: 80px;
+  }
+
+  .nav-cta {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: block;
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 420px) {
+
+  .brand-logo {
+    width: 100px;
+    height: 72px;
+  }
+
+  .mobile-menu-toggle {
+    width: 44px;
+    height: 44px;
+  }
+
+  .mobile-menu-panel {
+    padding: 22px;
+  }
 }
 
 
@@ -296,12 +543,10 @@ p {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(
-      90deg,
+    linear-gradient(90deg,
       rgba(12, 37, 27, .88) 0%,
       rgba(12, 37, 27, .63) 48%,
-      rgba(12, 37, 27, .12) 100%
-    ),
+      rgba(12, 37, 27, .12) 100%),
     url("https://images.unsplash.com/photo-1472396961693-142e6e269027?w=2000");
 
   background-position: center;
@@ -333,7 +578,7 @@ p {
 
 .hero-description {
   max-width: 540px;
-  color: rgba(255,255,255,.85);
+  color: rgba(255, 255, 255, .85);
   font-size: 17px;
   line-height: 1.8;
 }
@@ -350,8 +595,8 @@ p {
   justify-content: space-between;
   margin-top: 105px;
   padding-top: 20px;
-  border-top: 1px solid rgba(255,255,255,.3);
-  color: rgba(255,255,255,.75);
+  border-top: 1px solid rgba(255, 255, 255, .3);
+  color: rgba(255, 255, 255, .75);
   font-size: 11px;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -385,7 +630,7 @@ p {
 
 .impact-item {
   padding-left: 25px;
-  border-left: 1px solid #d2d2c6;
+  border-left: 4px solid rgba(255, 255, 255, .3);
 }
 
 .impact-item strong {
@@ -400,7 +645,7 @@ p {
 .impact-item span {
   color: var(--muted);
   font-size: 12px;
-  line-height: 1.6;
+  line-height: 2.6;
 }
 
 .impact-strip .data-note {
@@ -507,7 +752,7 @@ p {
 
 .problem-card:hover {
   transform: translateY(-7px);
-  box-shadow: 0 15px 35px rgba(25,61,48,.09);
+  box-shadow: 0 15px 35px rgba(25, 61, 48, .09);
 }
 
 .card-number {
@@ -564,7 +809,7 @@ p {
   margin: 30px 0;
 }
 
-.territory-location > span {
+.territory-location>span {
   color: var(--orange);
   font-size: 35px;
 }
@@ -615,13 +860,13 @@ p {
 
 .project-heading p {
   max-width: 530px;
-  color: rgba(255,255,255,.7);
+  color: rgba(255, 255, 255, .7);
 }
 
 .project-budget {
   min-width: 235px;
   padding: 25px;
-  border: 1px solid rgba(255,255,255,.25);
+  border: 1px solid rgba(255, 255, 255, .25);
 }
 
 .project-budget small,
@@ -646,7 +891,7 @@ p {
 
 .project-budget span {
   margin-top: 6px;
-  color: rgba(255,255,255,.7);
+  color: rgba(255, 255, 255, .7);
   font-size: 11px;
 }
 
@@ -673,8 +918,8 @@ p {
   grid-template-columns: repeat(4, 1fr);
   gap: 1px;
   margin-top: 45px;
-  background: rgba(255,255,255,.2);
-  border: 1px solid rgba(255,255,255,.2);
+  background: rgba(255, 255, 255, .2);
+  border: 1px solid rgba(255, 255, 255, .2);
 }
 
 .component-card {
@@ -682,7 +927,7 @@ p {
   background: var(--green-dark);
 }
 
-.component-card > span {
+.component-card>span {
   color: #d6c89d;
   font-size: 11px;
 }
@@ -702,7 +947,7 @@ p {
 
 .component-card p {
   margin-bottom: 0;
-  color: rgba(255,255,255,.65);
+  color: rgba(255, 255, 255, .65);
   font-size: 12px;
 }
 
@@ -714,14 +959,14 @@ p {
   margin-top: 40px;
 }
 
-.project-footer > span {
-  color: rgba(255,255,255,.75);
+.project-footer>span {
+  color: rgba(255, 255, 255, .75);
   font-size: 13px;
 }
 
 .project-note {
   margin-top: 20px;
-  color: rgba(255,255,255,.65);
+  color: rgba(255, 255, 255, .65);
 }
 
 
@@ -781,10 +1026,10 @@ p {
 
 .financing-card p {
   margin-bottom: 30px;
-  color: rgba(255,255,255,.7);
+  color: rgba(255, 255, 255, .7);
 }
 
-.financing-card .button + .button {
+.financing-card .button+.button {
   margin-top: 14px;
 }
 
@@ -801,7 +1046,7 @@ p {
   gap: 100px;
 }
 
-.transparency-grid > div:first-child p {
+.transparency-grid>div:first-child p {
   margin: 25px 0;
 }
 
@@ -812,7 +1057,7 @@ p {
   border-bottom: 1px solid var(--cream-dark);
 }
 
-.trust-items article > span {
+.trust-items article>span {
   color: var(--orange);
   font-size: 13px;
   font-weight: bold;
@@ -851,8 +1096,8 @@ p {
   color: #e5b86f;
 }
 
-.contact-container > p {
-  color: rgba(255,255,255,.7);
+.contact-container>p {
+  color: rgba(255, 255, 255, .7);
 }
 
 .contact-form {
@@ -862,7 +1107,7 @@ p {
   text-align: left;
 }
 
-.contact-form > label:not(.privacy-check) {
+.contact-form>label:not(.privacy-check) {
   display: block;
   margin-bottom: 9px;
   color: var(--green-dark);
@@ -893,7 +1138,7 @@ p {
 .contact-form select:focus,
 .contact-form textarea:focus {
   border-color: var(--green);
-  box-shadow: 0 0 0 2px rgba(49,93,67,.1);
+  box-shadow: 0 0 0 2px rgba(49, 93, 67, .1);
 }
 
 .privacy-check {
@@ -938,7 +1183,7 @@ p {
 .footer-brand p {
   max-width: 220px;
   margin-top: 22px;
-  color: rgba(255,255,255,.6);
+  color: rgba(255, 255, 255, .6);
   font-family: Georgia, serif;
   font-size: 17px;
 }
@@ -957,7 +1202,7 @@ p {
 
 .footer-column a,
 .footer-column span {
-  color: rgba(255,255,255,.65);
+  color: rgba(255, 255, 255, .65);
   transition: color .2s;
 }
 
@@ -970,8 +1215,8 @@ p {
   justify-content: space-between;
   gap: 20px;
   padding: 22px 0;
-  border-top: 1px solid rgba(255,255,255,.15);
-  color: rgba(255,255,255,.5);
+  border-top: 1px solid rgba(255, 255, 255, .15);
+  color: rgba(255, 255, 255, .5);
   font-size: 10px;
 }
 
@@ -1055,11 +1300,9 @@ p {
 
   .hero-background {
     background-image:
-      linear-gradient(
-        90deg,
-        rgba(12,37,27,.85),
-        rgba(12,37,27,.48)
-      ),
+      linear-gradient(90deg,
+        rgba(12, 37, 27, .85),
+        rgba(12, 37, 27, .48)),
       url("https://images.unsplash.com/photo-1472396961693-142e6e269027?w=1000");
 
     background-position: center;
@@ -1211,6 +1454,173 @@ p {
   .footer-bottom {
     flex-direction: column;
     line-height: 1.7;
+  }
+
+}
+
+
+/* =====================================================
+   15. SISTEMA DE FORMAS REDONDEADAS
+   Apariencia orgánica · Sin esquinas cuadradas
+====================================================== */
+
+/* 1. ELIMINAR CONTORNOS RÍGIDOS */
+
+.site-header,
+.button,
+.problem-card,
+.component-card,
+.project-budget,
+.financing-card,
+.contact-form,
+.contact-form input,
+.contact-form select,
+.contact-form textarea,
+.project-components {
+  border: none;
+}
+
+/* 2. BOTONES TIPO PÍLDORA */
+
+.button {
+  border-radius: 100px;
+  padding-inline: 30px;
+  transition:
+    transform .3s ease,
+    background-color .3s ease,
+    box-shadow .3s ease;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 22px rgba(17, 64, 42, .14);
+}
+
+/* 3. IMÁGENES CON ESQUINAS SUAVES */
+
+.about-image img,
+.territory-image img,
+.project-image img {
+  border-radius: 28px;
+}
+
+/* 4. BLOQUES INFORMATIVOS */
+
+.problem-card,
+.component-card,
+.project-budget,
+.financing-card,
+.image-caption {
+  border-radius: 24px;
+}
+
+/* 5. FORMULARIO */
+
+.contact-form {
+  border-radius: 28px;
+}
+
+.contact-form input:not([type="checkbox"]),
+.contact-form select,
+.contact-form textarea {
+  border: none;
+  border-radius: 16px;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  outline: 2px solid var(--green);
+  outline-offset: 2px;
+  box-shadow: none;
+}
+
+/* 6. MENÚ MÓVIL */
+
+.mobile-menu nav {
+  border: none;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* 7. ELEMENTOS DE MARCA */
+
+.brand-symbol {
+  border-radius: 50%;
+}
+
+.nav-cta {
+  border-radius: 100px;
+}
+
+/* 8. ELIMINAR LÍNEAS DECORATIVAS */
+
+.impact-item {
+  border-left: none;
+}
+
+.hero-bottom {
+  border-top: none;
+}
+
+.project-budget {
+  border: 2px solid rgba(255, 255, 255, .25);
+}
+
+.project-components {
+  border: none;
+  background: transparent;
+  gap: 18px;
+}
+
+.component-card {
+  border: 2px solid rgba(255, 255, 255, .25);
+}
+
+.benefit-list li,
+.trust-items article,
+.footer-bottom {
+  border: none;
+}
+
+/* 9. TRANSICIONES SUAVES */
+
+.problem-card,
+.component-card,
+.financing-card,
+.about-image img,
+.territory-image img,
+.project-image img {
+  transition:
+    transform .35s ease,
+    box-shadow .35s ease;
+}
+
+.problem-card:hover,
+.component-card:hover {
+  transform: translateY(-5px);
+}
+
+/* 10. RESPONSIVE: AJUSTES PARA MÓVILES */
+
+@media (max-width: 680px) {
+
+  .about-image img,
+  .territory-image img,
+  .project-image img {
+    border-radius: 22px;
+  }
+
+  .problem-card,
+  .component-card,
+  .project-budget,
+  .financing-card,
+  .contact-form {
+    border-radius: 22px;
+  }
+
+  .button {
+    border-radius: 100px;
   }
 
 }

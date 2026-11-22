@@ -1,22 +1,24 @@
-
 <!-- =====================================================
      ASOAGROTURÍ · LANDING DE FINANCIACIÓN
      Estructura principal de la página
 ====================================================== -->
 
 <!-- NAVEGACIÓN PRINCIPAL -->
+
+
 <header class="site-header">
   <div class="container nav-container">
 
-    <a href="#inicio" class="brand">
-      <span class="brand-symbol">A</span>
-      <span class="brand-name">
-        ASOAGROTURÍ
-        <small>EL CAMPO TIENE FUTURO</small>
-      </span>
+    <!-- LOGO -->
+    <a href="#inicio" class="brand" aria-label="Inicio ASOAGROTURÍ">
+      <img
+        src="/images/logo-asoagroturi.png"
+        alt="ASOAGROTURÍ"
+        class="brand-logo"
+      />
     </a>
 
-    <!-- Navegación para escritorio -->
+    <!-- NAVEGACIÓN ESCRITORIO -->
     <nav class="desktop-nav" aria-label="Navegación principal">
       <a href="#nosotros">Nosotros</a>
       <a href="#territorio">Territorio</a>
@@ -25,25 +27,80 @@
       <a href="#transparencia">Transparencia</a>
     </nav>
 
+    <!-- BOTÓN PRINCIPAL -->
     <a href="#contacto" class="button button-dark nav-cta">
       Ser aliado <span>↗</span>
     </a>
 
-    <!-- Menú desplegable para dispositivos móviles -->
-    <details class="mobile-menu">
-      <summary aria-label="Abrir menú">☰</summary>
-      <nav aria-label="Navegación móvil">
-        <a href="#nosotros">Nosotros</a>
-        <a href="#territorio">Territorio</a>
-        <a href="#proyecto">El proyecto</a>
-        <a href="#financiacion">Financiación</a>
-        <a href="#transparencia">Transparencia</a>
-        <a href="#contacto">Ser aliado</a>
-      </nav>
-    </details>
+    
+<!-- MENÚ MÓVIL -->
+<details class="mobile-menu">
+
+  <summary class="mobile-menu-toggle" aria-label="Abrir menú">
+    <span class="menu-icon">
+      <span></span>
+      <span></span>
+    </span>
+  </summary>
+
+  <nav class="mobile-menu-panel" aria-label="Navegación móvil">
+
+    <div class="mobile-menu-header">
+      <span>Explora ASOAGROTURÍ</span>
+      <small>NAVEGACIÓN</small>
+    </div>
+
+    <div class="mobile-menu-links">
+
+      <a href="#nosotros"onclick="this.closest('details').removeAttribute('open')">
+        <span class="menu-number">01</span>
+        <span>Nosotros</span>
+        <span class="menu-arrow">↗</span>
+      </a>
+
+      <a href="#territorio"onclick="this.closest('details').removeAttribute('open')">
+        <span class="menu-number">02</span>
+        <span>Territorio</span>
+        <span class="menu-arrow">↗</span>
+      </a>
+
+      <a href="#proyecto"onclick="this.closest('details').removeAttribute('open')">
+        <span class="menu-number">03</span>
+        <span>El proyecto</span>
+        <span class="menu-arrow">↗</span>
+      </a>
+
+      <a href="#financiacion"onclick="this.closest('details').removeAttribute('open')">
+        <span class="menu-number">04</span>
+        <span>Financiación</span>
+        <span class="menu-arrow">↗</span>
+      </a>
+
+      <a href="#transparencia"onclick="this.closest('details').removeAttribute('open')">
+        <span class="menu-number">05</span>
+        <span>Transparencia</span>
+        <span class="menu-arrow">↗</span>
+      </a>
+
+    </div>
+
+    <a href="#contacto"  class="mobile-menu-cta" onclick="this.closest('details').removeAttribute('open')">
+      Ser aliado 
+      <span>↗</span>
+    </a>
+
+    <p class="mobile-menu-footer">
+      El campo tiene futuro.
+    </p>
+
+  </nav>
+
+</details>
+
 
   </div>
 </header>
+
 
 <main>
 
@@ -118,7 +175,7 @@
 
     </div>
     <p class="container data-note">
-      Cifras de alcance proyectado de Fincas que Rinden,
+      Cifras de alcance proyectado de Fincas que Rinden,<br>
       sujetas a validación técnica y financiación.
     </p>
   </section>
@@ -131,10 +188,8 @@
     <div class="container about-grid">
 
       <div class="about-image">
-        <img
-          src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1000"
-          alt="Paisaje de campo y producción agrícola"
-        />
+        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1000"
+          alt="Paisaje de campo y producción agrícola" />
         <div class="image-caption">
           <span>01 / NUESTRA IDENTIDAD</span>
           <strong>Lo que sembramos con amor, rinde para todos.</strong>
@@ -275,11 +330,8 @@
       </div>
 
       <div class="territory-image">
-        <img
-          src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=1000"
-          alt="Paisaje rural y tierras agrícolas"
-          loading="lazy"
-        />
+        <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=1000"
+          alt="Paisaje rural y tierras agrícolas" loading="lazy" />
       </div>
 
     </div>
@@ -320,11 +372,8 @@
       </div>
 
       <div class="project-image">
-        <img
-          src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=1600"
-          alt="Paisaje de finca y producción rural"
-          loading="lazy"
-        />
+        <img src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=1600"
+          alt="Paisaje de finca y producción rural" loading="lazy" />
 
         <span class="project-image-label">
           PRODUCIR MEJOR · VIVIR MEJOR
@@ -439,10 +488,8 @@
           Quiero ser aliado →
         </a>
 
-        <a
-          href="mailto:correspondencia@asoagroturi.com?subject=Proyecto%20Fincas%20que%20Rinden"
-          class="button button-outline button-full"
-        >
+        <a href="mailto:correspondencia@asoagroturi.com?subject=Proyecto%20Fincas%20que%20Rinden"
+          class="button button-outline button-full">
           Contactar a la asociación
         </a>
 
@@ -473,10 +520,7 @@
           de los recursos.
         </p>
 
-        <a href="https://asoagroturi.com/transparencia"
-           class="text-link"
-           target="_blank"
-           rel="noopener noreferrer">
+        <a href="https://asoagroturi.com/transparencia" class="text-link" target="_blank" rel="noopener noreferrer">
           Consultar información institucional →
         </a>
       </div>
@@ -542,41 +586,17 @@
         participar en esta iniciativa.
       </p>
 
-      <form
-        class="contact-form"
-        action="mailto:correspondencia@asoagroturi.com"
-        method="post"
-        enctype="text/plain"
-      >
+      <form class="contact-form" action="mailto:correspondencia@asoagroturi.com" method="post" enctype="text/plain">
 
         <label for="nombre">Nombre completo</label>
-        <input
-          id="nombre"
-          name="Nombre"
-          type="text"
-          placeholder="Tu nombre"
-          autocomplete="name"
-          required
-        />
+        <input id="nombre" name="Nombre" type="text" placeholder="Tu nombre" autocomplete="name" required />
 
         <label for="email">Correo electrónico</label>
-        <input
-          id="email"
-          name="Correo"
-          type="email"
-          placeholder="correo@empresa.com"
-          autocomplete="email"
-          required
-        />
+        <input id="email" name="Correo" type="email" placeholder="correo@empresa.com" autocomplete="email" required />
 
         <label for="organizacion">Empresa u organización</label>
-        <input
-          id="organizacion"
-          name="Organizacion"
-          type="text"
-          placeholder="Nombre de tu organización"
-          autocomplete="organization"
-        />
+        <input id="organizacion" name="Organizacion" type="text" placeholder="Nombre de tu organización"
+          autocomplete="organization" />
 
         <label for="interes">¿Cómo te gustaría participar?</label>
         <select id="interes" name="Interes" required>
@@ -590,12 +610,7 @@
         </select>
 
         <label for="mensaje">Cuéntanos un poco más</label>
-        <textarea
-          id="mensaje"
-          name="Mensaje"
-          rows="4"
-          placeholder="Queremos conocer tu propuesta..."
-        ></textarea>
+        <textarea id="mensaje" name="Mensaje" rows="4" placeholder="Queremos conocer tu propuesta..."></textarea>
 
         <label class="privacy-check">
           <input type="checkbox" required />
@@ -655,8 +670,7 @@
     <div class="footer-column">
       <strong>Institucional</strong>
       <a href="#transparencia">Transparencia</a>
-      <a href="https://asoagroturi.com/" target="_blank"
-         rel="noopener noreferrer">Sitio corporativo</a>
+      <a href="https://asoagroturi.com/" target="_blank" rel="noopener noreferrer">Sitio corporativo</a>
       <a href="#contacto">Contacto</a>
     </div>
 
