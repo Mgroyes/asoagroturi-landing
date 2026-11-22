@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Estilos globales de toda la aplicación */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  scroll-behavior: smooth;
+  scroll-padding-top: 85px;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
