@@ -7,13 +7,13 @@
 /* 1. VARIABLES GLOBALES */
 
 :host {
-  --green-dark: #193d30;
-  --green: #315d43;
+  --green-dark:  #1B723E;
+  --green:#11402A;
   --green-light: #e7eee4;
   --cream: #f7f5ed;
   --cream-dark: #eeebdf;
-  --orange: #d69b4c;
-  --text: #26362c;
+  --orange: #F6DC6E;
+  --text: #6B760C;
   --muted: #747c72;
   --white: #ffffff;
 
