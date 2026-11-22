@@ -1,26 +1,92 @@
-/* You can add global styles to this file, and also import other style files */
 
-/* Estilos globales de toda la aplicación */
+/* =========================================
+   1. FUENTES CORPORATIVAS ASOAGROTURÍ
+========================================= */
+
+@font-face {
+  font-family: "Branding";
+  src: url("/assets/fonts/branding-light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Branding";
+  src: url("/assets/fonts/branding-semilight.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Branding";
+  src: url("/assets/fonts/branding-medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Branding";
+  src: url("/assets/fonts/branding-medium-italic.woff2") format("woff2");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Branding";
+  src: url("/assets/fonts/branding-semibold-italic.woff2") format("woff2");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Branding";
+  src: url("/assets/fonts/branding-bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Branding";
+  src: url("/assets/fonts/branding-bold-italic.woff2") format("woff2");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+
+/* =========================================
+   2. CONFIGURACIÓN GLOBAL
+========================================= */
 
 * {
   box-sizing: border-box;
 }
 
 html {
-  margin: 0;
   scroll-behavior: smooth;
-  scroll-padding-top: 85px;
 }
 
 body {
   margin: 0;
-  min-width: 320px;
-  min-height: 100vh;
+  font-family: "Branding", Arial, sans-serif;
+  font-weight: 400;
+  color: #26352c;
+  background-color: #ffffff;
 }
 
 button,
 input,
-select,
-textarea {
+textarea,
+select {
+  font: inherit;
+}
+
+a {
   font-family: inherit;
 }
